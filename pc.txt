@@ -1,0 +1,57 @@
+vaghti ke beyne component ha rabeteye child and parents nist baraye inke beshe beyneshon ertebat bargharar kard
+masalan beyne counters va count rabeteye child and parents hast va hame chi az tarighe props mitone share beshe ama 
+beyne counters va navbar rabetei nist. when there is no parent child relationship and u want to keep 2 compnent connected and
+in sync and share the data between tehm u have to lift the state up yani bayad state counters ro bebarim be parente asli ke alan app.js shode
+
+APP
+Couunters===> counter ....state injas
+navbar
+
+bayad state bere
+
+
+APP...state
+Couunters===> counter 
+navbar
+
+injori ham nabvar ham counter ye parent daran va mishe data be childha share she
+
+
+span.badge.badge-pill.badge-secondary
+span baraye navbar ghable enter in bood
+
+stateless functional component ... in yani inke age state ya hich fn khsi nadashtim va hame chi
+props mishe mitonim ye jori dge component ro benevisim ke class nabashe va function bashe..yani jaye class ye function tarif mikonim
+
+sfc ==== fn component
+cc ====== class component
+
+
+//
+const NavBar = props => {
+  return (
+    <nav className="navbar navbar-light bg-light">
+      <a className="navbar-brand" href="#">
+        Navbar <span className="badge badge-pill badge-secondary">{props.totalCounters}</span>
+      </a>
+    </nav> //react element//inja this hazf mishe va props be onvane ye parametr be in fn ezafe mishe
+  );
+};
+//
+
+navbar in shekli bood ama chon ke inja faghat ye chiz props mishe bejaye inke props konim khode
+on parametr ro be onvane parametr minevsiim injori:
+
+//
+const NavBar = ({ totalCounters }) => {
+  return (
+    <nav className="navbar navbar-light bg-light">
+      <a className="navbar-brand" href="#">
+        Navbar <span className="badge badge-pill badge-secondary">{totalCounters}</span>
+      </a>
+    </nav> //react element//inja this hazf mishe va props be onvane ye parametr be in fn ezafe mishe
+  );
+};
+//
+
+life cyck hooks faghat dar class component tarif mishe
